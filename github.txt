@@ -1,0 +1,7 @@
+git status
+1. $ git clone (link of your github repository).
+2. Move project into file created via clone command.
+3. $ git status : to check status of 
+4. $ git add .  : to add project to the repository.
+5. $ git commit -m "my project"
+6. $ git push origin master
