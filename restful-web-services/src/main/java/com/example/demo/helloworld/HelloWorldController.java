@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloWorldController {
 	
-	@GetMapping(path = "/hello-world")
+	@GetMapping("/")
 	public String helloWorld() {
 		return "Hello World";
 	}
 	
 //	@GetMapping(path = "/hello-world-bean")
-//	public HelloWorldBean helloWorldBean() {
+//	public AuthenticationBean helloWorldBean() {
 //		  throw new RuntimeException("There is some error");
-//		//return new HelloWorldBean("Hello-world-changed");
+//		//return new AuthenticationBean("Hello-world-changed");
 //		}
 	
 	
@@ -28,8 +28,8 @@ public class HelloWorldController {
 		}
 
 //	@GetMapping(path = "/hello-world-bean")
-//	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
-//		return new HelloWorldBean(String.format("Hello-world-bean, %s",name));
+//	public AuthenticationBean helloWorldPathVariable(@PathVariable String name) {
+//		return new AuthenticationBean(String.format("Hello-world-bean, %s",name));
 //		}
 
 

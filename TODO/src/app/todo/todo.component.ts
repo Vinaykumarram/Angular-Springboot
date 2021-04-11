@@ -26,7 +26,7 @@ export class TodoComponent implements OnInit {
     this.todo = new Todo(this.id,'',false,new Date());
 
     if(this.id!=-1){
-    this.todoService.retrieveTodo('in28minutes', this.id)
+    this.todoService.retrieveTodo('vinay', this.id)
       .subscribe(
         data => this.todo = data
       )
@@ -37,14 +37,14 @@ export class TodoComponent implements OnInit {
 
     if(this.id!=-1){
       //create todo
-      this.todoService.createTodo('in28minutes', this.todo).subscribe(
+      this.todoService.createTodo('vinay', this.todo).subscribe(
         data =>{
           console.log(data)
           this.router.navigate(['todos'])
         }
       )
     } else{
-    this.todoService.updateTodo('in28minutes', this.id, this.todo).subscribe(
+    this.todoService.updateTodo('vinay', this.id, this.todo).subscribe(
       data =>{
         console.log(data)
         this.router.navigate(['todos'])
