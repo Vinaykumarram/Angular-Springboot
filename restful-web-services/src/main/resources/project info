@@ -5,3 +5,11 @@ password: vinay
 
 
 in h2 db for configuration use: jdbc:h2:mem:testdb
+
+
+for http://localhost:8080/authenticate  use 
+
+{
+	"username": "vinay",
+	"password": "vinay"
+}
