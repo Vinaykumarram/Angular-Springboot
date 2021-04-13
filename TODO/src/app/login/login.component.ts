@@ -44,10 +44,30 @@ export class LoginComponent implements OnInit {
     console.log(this.username);
     //  console.log(this.password);
     // if (this.username == 'in28minutes' && this.password == 'vinay') {
-      this.basicAuthenticationService
-        .executeAuthenticationService(this.username, this.password)
-        .subscribe(data => {
+    this.basicAuthenticationService
+      .executeAuthenticationService(this.username, this.password)
+      .subscribe(
+        (data) => {
           console.log(data);
+          this.router.navigate(["welcome", this.username]);
+          this.invalidLogin = false;
+        },
+        (error) => {
+          console.log(error);
+          this.invalidLogin = true;
+        }
+      );
+  }
+
+
+  handleJWTBasicAuthLogin() {
+    console.log(this.username);
+    //  console.log(this.password);
+    // if (this.username == 'in28minutes' && this.password == 'vinay') {
+      this.basicAuthenticationService
+        .executeJWTAuthenticationService(this.username, this.password)
+        .subscribe(data => {
+          // console.log(data);
           this.router.navigate(["welcome", this.username]);
           this.invalidLogin = false;
         },
@@ -58,5 +78,5 @@ export class LoginComponent implements OnInit {
         )
   }
 
-  
+
 }

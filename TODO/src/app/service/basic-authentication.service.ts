@@ -14,6 +14,23 @@ export class BasicAuthenticationService {
   
   constructor(private https: HttpClient) {}
 
+
+  executeJWTAuthenticationService(username, password) {
+    
+    return this.https
+      .post<any>(`${API_URL}/authenticate`, { username, password})
+      .pipe(
+        map((data) => {
+          sessionStorage.setItem(AUTHENTICATED_USER, username);
+          sessionStorage.setItem(TOKEN, `Bearer ${data.token}`);
+
+          return data;
+        })
+      );
+    //console.log("execuete hello world bean service")
+  }
+
+
   
   executeAuthenticationService(username, password) {
     let basicAuthHeaderString =
