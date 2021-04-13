@@ -1,0 +1,7 @@
+
+
+username: vinay
+password: vinay
+
+
+in h2 db for configuration use: jdbc:h2:mem:testdb
